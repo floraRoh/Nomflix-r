@@ -45,7 +45,7 @@ function Header({location:{pathname}}) {
           <SLink to="/tv">TV</SLink>
         </Item>
         <Item current={pathname==="/search"}>
-          <SLink to="/search">Search</SLink>
+          <SLink to="/search">SEARCH</SLink>
         </Item>
       </List>
     </HeaderWrap>
