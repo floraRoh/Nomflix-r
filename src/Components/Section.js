@@ -13,7 +13,10 @@ const Title = styled.span`
 `;
 
 const Grid = styled.div`
-
+  display:grid;
+  grid-template-columns:repeat(auto-fill, 150px);
+  grid-gap:20px;
+  margin-top:20px;
 `;
 
 const Section = ({ title, children }) => (
