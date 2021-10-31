@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Section from "Components/Section";
 import Loader from "Components/Loader";
+import Message from "Components/Message";
 
 const Container = styled.div``;
 
@@ -32,10 +33,11 @@ const TVPresenter = ({ topRated, airingToday, popular, error, loading }) =>
           ))}
         </Section>
       )}
+      {error && <Message color="#e74c3c" text={error} />}
     </Container>
   );
 
-TVPresenter.prototype = {
+TVPresenter.propTypes = {
   topRated: PropTypes.array,
   airingToday: PropTypes.array,
   popular: PropTypes.array,

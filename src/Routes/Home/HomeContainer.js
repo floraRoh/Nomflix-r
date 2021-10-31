@@ -1,6 +1,6 @@
 import React from "react";
 import HomePresenter from "Routes/Home/HomePresenter";
-import { movieApi, tvApi } from "api";
+import { movieApi } from "api";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default class extends React.Component {
@@ -26,11 +26,11 @@ export default class extends React.Component {
       this.setState({
         nowPlaying,
         upComing,
-        popular
-      })
+        popular,
+      });
     } catch {
       this.setState({
-        error: "Can't find information",
+        error: "Can't find Movie information",
       });
     } finally {
       this.setState({

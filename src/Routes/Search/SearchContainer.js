@@ -25,12 +25,14 @@ export default class extends React.Component {
   };
 
   updateTerm = (event) => {
-    const {target : {value}} = event;
+    const {
+      target: { value },
+    } = event;
     console.log(value);
     this.setState({
-      searchTerm: value
-    })
-  }
+      searchTerm: value,
+    });
+  };
 
   searchByTerm = async () => {
     const { searchTerm } = this.state;
@@ -48,7 +50,7 @@ export default class extends React.Component {
       });
     } catch {
       this.setState({
-        error: "Can't find results information",
+        error: "Can't find result information",
       });
     } finally {
       this.setState({

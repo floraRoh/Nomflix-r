@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Section from "Components/Section";
 import { movieApi } from "api";
 import Loader from "Components/Loader";
+import Message from "Components/Message";
 
 const Container = styled.div`
   padding: 0 10px;
@@ -34,10 +35,11 @@ const HomePresenter = ({ nowPlaying, upComing, popular, error, loading }) =>
           ))}
         </Section>
       )}
+      {error && <Message color="#e74c3c" text={error} />}
     </Container>
   );
 
-HomePresenter.prototype = {
+HomePresenter.propTypes = {
   nowPlaying: PropTypes.array,
   upcoming: PropTypes.array,
   popular: PropTypes.array,
