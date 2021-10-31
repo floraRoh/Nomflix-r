@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Section from "Components/Section";
 import Loader from "Components/Loader";
 import Message from "Components/Message";
+import Poster from "Components/Poster";
 
 const Container = styled.div``;
 
@@ -15,21 +16,45 @@ const TVPresenter = ({ topRated, airingToday, popular, error, loading }) =>
       {topRated && topRated.length > 0 && (
         <Section title="Top Rated">
           {topRated.map((tv) => (
-            <span key={tv.id}>{tv.name}</span>
+            <Poster 
+            id={tv.id} 
+            title={tv.original_name}
+            imageUrl={tv.poster_path}
+            rating={tv.vote_average} 
+            year={tv.first_air_date && tv.first_air_date.substring(0, 4)} 
+            star={tv.vote_count} 
+            isMovie={false}
+          />
           ))}
         </Section>
       )}
       {popular && popular.length > 0 && (
         <Section title="Popular">
           {popular.map((tv) => (
-            <span key={tv.id}>{tv.name}</span>
+            <Poster 
+            id={tv.id} 
+            title={tv.original_name}
+            imageUrl={tv.poster_path}
+            rating={tv.vote_average} 
+            year={tv.first_air_date && tv.first_air_date.substring(0, 4)} 
+            star={tv.vote_count} 
+            isMovie={false}
+          />
           ))}
         </Section>
       )}
       {airingToday && airingToday.length > 0 && (
         <Section title="Airing Today">
           {airingToday.map((tv) => (
-            <span key={tv.id}>{tv.name}</span>
+            <Poster 
+            id={tv.id} 
+            title={tv.original_name}
+            imageUrl={tv.poster_path}
+            rating={tv.vote_average} 
+            year={tv.first_air_date && tv.first_air_date.substring(0, 4)} 
+            star={tv.vote_count} 
+            isMovie={false}
+          />
           ))}
         </Section>
       )}

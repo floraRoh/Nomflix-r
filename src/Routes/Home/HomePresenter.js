@@ -18,21 +18,45 @@ const HomePresenter = ({ nowPlaying, upComing, popular, error, loading }) =>
       {nowPlaying && nowPlaying.length > 0 && (
         <Section title="Now Playing">
           {nowPlaying.map((movie) => (
-            <Poster />
+            <Poster 
+              id={movie.id} 
+              title={movie.original_title}
+              imageUrl={movie.poster_path}
+              rating={movie.vote_average} 
+              year={movie.release_date && movie.release_date.substring(0, 4)} 
+              star={movie.vote_count} 
+              isMovie={true}
+            />
           ))}
         </Section>
       )}
       {upComing && upComing.length > 0 && (
         <Section title="UpComing">
           {upComing.map((movie) => (
-            <Poster />
+            <Poster 
+              id={movie.id} 
+              title={movie.original_title}
+              imageUrl={movie.poster_path}
+              rating={movie.vote_average} 
+              year={movie.release_date && movie.release_date.substring(0, 4)} 
+              star={movie.vote_count} 
+              isMovie={true}
+            />
           ))}
         </Section>
       )}
       {popular && popular.length > 0 && (
         <Section title="Popular">
           {popular.map((movie) => (
-            <Poster />
+            <Poster 
+              id={movie.id} 
+              title={movie.original_title}
+              imageUrl={movie.poster_path}
+              rating={movie.vote_average} 
+              year={movie.release_date && movie.release_date.substring(0, 4)} 
+              star={movie.vote_count} 
+              isMovie={true}
+            />
           ))}
         </Section>
       )}
