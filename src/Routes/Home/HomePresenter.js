@@ -5,6 +5,7 @@ import Section from "Components/Section";
 import { movieApi } from "api";
 import Loader from "Components/Loader";
 import Message from "Components/Message";
+import Poster from "Components/Poster";
 
 const Container = styled.div`
   padding: 0 10px;
@@ -17,21 +18,21 @@ const HomePresenter = ({ nowPlaying, upComing, popular, error, loading }) =>
       {nowPlaying && nowPlaying.length > 0 && (
         <Section title="Now Playing">
           {nowPlaying.map((movie) => (
-            <span key={movie.id}>{movie.title}</span>
+            <Poster />
           ))}
         </Section>
       )}
       {upComing && upComing.length > 0 && (
         <Section title="UpComing">
           {upComing.map((movie) => (
-            <span key={movie.id}>{movie.title}</span>
+            <Poster />
           ))}
         </Section>
       )}
       {popular && popular.length > 0 && (
         <Section title="Popular">
           {popular.map((movie) => (
-            <span key={movie.id}>{movie.title}</span>
+            <Poster />
           ))}
         </Section>
       )}
