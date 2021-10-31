@@ -4,7 +4,9 @@ import Home from "Routes/Home";
 import TV from "Routes/TV";
 import Search from "Routes/Search";
 import Header from "Components/Header";
+import Detail from "Routes/Detail";
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default () => (
   <Router>
     <Header />
@@ -12,6 +14,8 @@ export default () => (
       <Route path="/" exact component={Home} />
       <Route path="/search" component={Search} />
       <Route path="/tv" component={TV} />
+      <Route path="/movie/:id" component={Detail} />
+      <Route path="/tv/:id" component={Detail} />
       <Redirect from="*" to="/" />
     </Switch>
   </Router>
