@@ -7,21 +7,29 @@ import Loader from "Components/Loader";
 const Container = styled.div``;
 
 const TVPresenter = ({ topRated, airingToday, popular, error, loading }) =>
-  loading ? <Loader /> : (
+  loading ? (
+    <Loader />
+  ) : (
     <Container>
       {topRated && topRated.length > 0 && (
         <Section title="Top Rated">
-          <Container>{topRated.map((tv) => <span key={tv.id}>{tv.name}</span>)}</Container>
+          {topRated.map((tv) => (
+            <span key={tv.id}>{tv.name}</span>
+          ))}
         </Section>
       )}
       {popular && popular.length > 0 && (
         <Section title="Popular">
-          <Container>{popular.map((tv) => <span key={tv.id}>{tv.name}</span>)}</Container>
+          {popular.map((tv) => (
+            <span key={tv.id}>{tv.name}</span>
+          ))}
         </Section>
       )}
       {airingToday && airingToday.length > 0 && (
         <Section title="Airing Today">
-          <Container>{airingToday.map((tv) => <span key={tv.id}>{tv.name}</span>)}</Container>
+          {airingToday.map((tv) => (
+            <span key={tv.id}>{tv.name}</span>
+          ))}
         </Section>
       )}
     </Container>
