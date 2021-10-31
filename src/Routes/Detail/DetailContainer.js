@@ -30,21 +30,20 @@ export default class extends React.Component {
       return push("/");
     }
     let result = null;
-    try{
-      if(isMovie) {
-        ({data: result} = await movieApi.movieDetail(parsedId))
-      }else {
-        ({data: result} = await tvApi.showDetail(parsedId))
+    try {
+      if (isMovie) {
+        ({ data: result } = await movieApi.movieDetail(parsedId));
+      } else {
+        ({ data: result } = await tvApi.showDetail(parsedId));
       }
     } catch {
-      this.setState({error: "Can't find anything"});
-    } finally{
-      this.setState({loading: false, result});
+      this.setState({ error: "Can't find anything" });
+    } finally {
+      this.setState({ loading: false, result });
     }
   }
   render() {
     const { result, error, loading } = this.state;
-    console.log(this.state);
     return <DetailPresenter result={result} error={error} loading={loading} />;
   }
 }

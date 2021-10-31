@@ -33,37 +33,41 @@ const SearchPresenter = ({ movieResults, tvResults, searchTerm, error, loading, 
         {movieResults && movieResults.length > 0 && (
           <Section title="Movie Results">
             {movieResults.map((movie) => (
-               <Poster 
-               id={movie.id} 
-               title={movie.original_title}
-               imageUrl={movie.poster_path}
-               rating={movie.vote_average} 
-               year={movie.release_date && movie.release_date.substring(0, 4)} 
-               star={movie.vote_count} 
-               isMovie={true}
-             />
+              <Poster
+                key={movie.id}
+                id={movie.id}
+                title={movie.original_title}
+                imageUrl={movie.poster_path}
+                rating={movie.vote_average}
+                year={movie.release_date && movie.release_date.substring(0, 4)}
+                star={movie.vote_count}
+                isMovie={true}
+              />
             ))}
           </Section>
         )}
         {tvResults && tvResults.length > 0 && (
           <Section title="TV Results">
             {tvResults.map((tv) => (
-              <Poster 
-              id={tv.id} 
-              title={tv.original_name}
-              imageUrl={tv.poster_path}
-              rating={tv.vote_average} 
-              year={tv.first_air_date && tv.first_air_date.substring(0, 4)} 
-              star={tv.vote_count} 
-              isMovie={false}
-            />
+              <Poster
+                key={tv.id}
+                id={tv.id}
+                title={tv.original_name}
+                imageUrl={tv.poster_path}
+                rating={tv.vote_average}
+                year={tv.first_air_date && tv.first_air_date.substring(0, 4)}
+                star={tv.vote_count}
+                isMovie={false}
+              />
             ))}
           </Section>
         )}
       </>
     )}
     {error && <Message color="#e74c3c" text={error} />}
-    {tvResults && movieResults && movieResults.length === 0 && tvResults.length === 0 && <Message color="#95a5a6" text={`Nothing Found for : ${searchTerm}`} />}
+    {tvResults && movieResults && movieResults.length === 0 && tvResults.length === 0 && (
+      <Message color="#95a5a6" text={`Nothing Found for : ${searchTerm}`} />
+    )}
   </Container>
 );
 

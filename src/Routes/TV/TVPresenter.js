@@ -16,45 +16,48 @@ const TVPresenter = ({ topRated, airingToday, popular, error, loading }) =>
       {topRated && topRated.length > 0 && (
         <Section title="Top Rated">
           {topRated.map((tv) => (
-            <Poster 
-            id={tv.id} 
-            title={tv.original_name}
-            imageUrl={tv.poster_path}
-            rating={tv.vote_average} 
-            year={tv.first_air_date && tv.first_air_date.substring(0, 4)} 
-            star={tv.vote_count} 
-            isMovie={false}
-          />
+            <Poster
+              key={tv.id}
+              id={tv.id}
+              title={tv.original_name}
+              imageUrl={tv.poster_path}
+              rating={tv.vote_average}
+              year={tv.first_air_date && tv.first_air_date.substring(0, 4)}
+              star={tv.vote_count}
+              isMovie={false}
+            />
           ))}
         </Section>
       )}
       {popular && popular.length > 0 && (
         <Section title="Popular">
           {popular.map((tv) => (
-            <Poster 
-            id={tv.id} 
-            title={tv.original_name}
-            imageUrl={tv.poster_path}
-            rating={tv.vote_average} 
-            year={tv.first_air_date && tv.first_air_date.substring(0, 4)} 
-            star={tv.vote_count} 
-            isMovie={false}
-          />
+            <Poster
+              key={tv.id}
+              id={tv.id}
+              title={tv.original_name}
+              imageUrl={tv.poster_path}
+              rating={tv.vote_average}
+              year={tv.first_air_date && tv.first_air_date.substring(0, 4)}
+              star={tv.vote_count}
+              isMovie={false}
+            />
           ))}
         </Section>
       )}
       {airingToday && airingToday.length > 0 && (
         <Section title="Airing Today">
           {airingToday.map((tv) => (
-            <Poster 
-            id={tv.id} 
-            title={tv.original_name}
-            imageUrl={tv.poster_path}
-            rating={tv.vote_average} 
-            year={tv.first_air_date && tv.first_air_date.substring(0, 4)} 
-            star={tv.vote_count} 
-            isMovie={false}
-          />
+            <Poster
+              key={tv.id}
+              id={tv.id}
+              title={tv.original_name}
+              imageUrl={tv.poster_path}
+              rating={tv.vote_average}
+              year={tv.first_air_date && tv.first_air_date.substring(0, 4)}
+              star={tv.vote_count}
+              isMovie={false}
+            />
           ))}
         </Section>
       )}

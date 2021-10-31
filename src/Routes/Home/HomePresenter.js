@@ -18,13 +18,14 @@ const HomePresenter = ({ nowPlaying, upComing, popular, error, loading }) =>
       {nowPlaying && nowPlaying.length > 0 && (
         <Section title="Now Playing">
           {nowPlaying.map((movie) => (
-            <Poster 
-              id={movie.id} 
+            <Poster
+              key={movie.id}
+              id={movie.id}
               title={movie.original_title}
               imageUrl={movie.poster_path}
-              rating={movie.vote_average} 
-              year={movie.release_date && movie.release_date.substring(0, 4)} 
-              star={movie.vote_count} 
+              rating={movie.vote_average}
+              year={movie.release_date && movie.release_date.substring(0, 4)}
+              star={movie.vote_count}
               isMovie={true}
             />
           ))}
@@ -33,13 +34,14 @@ const HomePresenter = ({ nowPlaying, upComing, popular, error, loading }) =>
       {upComing && upComing.length > 0 && (
         <Section title="UpComing">
           {upComing.map((movie) => (
-            <Poster 
-              id={movie.id} 
+            <Poster
+              key={movie.id}
+              id={movie.id}
               title={movie.original_title}
               imageUrl={movie.poster_path}
-              rating={movie.vote_average} 
-              year={movie.release_date && movie.release_date.substring(0, 4)} 
-              star={movie.vote_count} 
+              rating={movie.vote_average}
+              year={movie.release_date && movie.release_date.substring(0, 4)}
+              star={movie.vote_count}
               isMovie={true}
             />
           ))}
@@ -48,13 +50,14 @@ const HomePresenter = ({ nowPlaying, upComing, popular, error, loading }) =>
       {popular && popular.length > 0 && (
         <Section title="Popular">
           {popular.map((movie) => (
-            <Poster 
-              id={movie.id} 
+            <Poster
+              key={movie.id}
+              id={movie.id}
               title={movie.original_title}
               imageUrl={movie.poster_path}
-              rating={movie.vote_average} 
-              year={movie.release_date && movie.release_date.substring(0, 4)} 
-              star={movie.vote_count} 
+              rating={movie.vote_average}
+              year={movie.release_date && movie.release_date.substring(0, 4)}
+              star={movie.vote_count}
               isMovie={true}
             />
           ))}
