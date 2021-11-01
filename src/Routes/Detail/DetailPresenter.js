@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Loader from "Components/Loader";
+import { Helmet } from "react-helmet";
 
 const Container = styled.div`
   width: 80%;
@@ -61,7 +62,7 @@ const Data = styled.div`
   margin-top: 30px;
   flex: 1;
   @media screen and (max-width: 768px) {
-    margin-left:0;
+    margin-left: 0;
   }
 `;
 const Title = styled.div`
@@ -88,9 +89,17 @@ const OverView = styled.p`
 
 const DetailPresenter = ({ result, error, loading }) =>
   loading ? (
-    <Loader />
+    <>
+      <Helmet>
+        <title>Loader | Nomfilx-r</title>
+      </Helmet>
+      <Loader />
+    </>
   ) : (
     <Container>
+      <Helmet>
+        <title>{result.original_title ? result.original_title : result.original_name} | Nomfilx-r</title>
+      </Helmet>
       <BackDrop bgImg={`https://image.tmdb.org/t/p/original${result.backdrop_path}`} />
       <Content>
         <Cover
@@ -113,7 +122,6 @@ const DetailPresenter = ({ result, error, loading }) =>
       </Content>
     </Container>
   );
-
 DetailPresenter.propTypes = {
   result: PropTypes.object,
   error: PropTypes.string,
