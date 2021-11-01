@@ -40,7 +40,7 @@ function Header({location:{pathname}}) {
   return (
     <HeaderWrap>
       <List>
-        <Item current={pathname==="/"}>
+        <Item current={pathname==="/home"}>
           <SLink to="/home">HOME</SLink>
         </Item>
         <Item current={pathname==="/tv"}>

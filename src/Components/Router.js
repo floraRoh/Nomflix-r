@@ -8,7 +8,7 @@ import Detail from "Routes/Detail";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => (
-  <Router>
+  <Router basename="/Nomflix-r">
     <Header />
     <Switch>
       <Route path="/" exact component={Home} />
