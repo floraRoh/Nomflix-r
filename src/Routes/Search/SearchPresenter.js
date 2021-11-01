@@ -10,6 +10,10 @@ import { Helmet } from "react-helmet";
 const Container = styled.div`
   margin-top: 30px;
   margin-left: 10px;
+  @media screen and (max-width: 320px) {
+    margin-left:0;
+    padding:0 10px;
+  }
 `;
 
 const Form = styled.form`
@@ -21,6 +25,9 @@ const Input = styled.input`
   all: unset;
   font-size: 30px;
   width: 100%;
+  @media screen and (max-width: 512px) {
+    font-size: 1.2rem;
+  } 
 `;
 const SearchPresenter = ({ movieResults, tvResults, searchTerm, error, loading, handleSubmit, updateTerm }) => (
   <Container>

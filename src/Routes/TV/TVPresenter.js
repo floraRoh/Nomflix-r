@@ -7,7 +7,9 @@ import Message from "Components/Message";
 import Poster from "Components/Poster";
 import { Helmet } from "react-helmet";
 
-const Container = styled.div``;
+const Container = styled.div`
+  padding:0 10px;
+`;
 
 const TVPresenter = ({ topRated, airingToday, popular, error, loading }) => (
   <>
