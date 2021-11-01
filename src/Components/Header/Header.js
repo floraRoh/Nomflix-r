@@ -8,7 +8,7 @@ const HeaderWrap = styled.header`
   top: 0;
   left: 0;
   width: 100%;
-  height: 50px;
+  height: 80px;
   display: flex;
   align-item: center;
   background-color: rgba(20, 20, 20, 0.8);
@@ -22,7 +22,9 @@ const List = styled.ul`
 `;
 const Item = styled.li`
   width: 80px;
-  text-align: center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   border-bottom: 4px solid ${(props) => (props.current ? "skyblue" : "transparent")};
   transition: border-bottom 0.5s ease-in-out;
 `;
@@ -31,7 +33,6 @@ const SLink = styled(Link)`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 50px;
 `;
 
 function Header({location:{pathname}}) {

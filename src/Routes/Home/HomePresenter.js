@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Section from "Components/Section";
-import { movieApi } from "api";
 import Loader from "Components/Loader";
 import Message from "Components/Message";
 import Poster from "Components/Poster";
@@ -25,7 +24,6 @@ const HomePresenter = ({ nowPlaying, upComing, popular, error, loading }) =>
               imageUrl={movie.poster_path}
               rating={movie.vote_average}
               year={movie.release_date && movie.release_date.substring(0, 4)}
-              star={movie.vote_count}
               isMovie={true}
             />
           ))}
@@ -41,7 +39,6 @@ const HomePresenter = ({ nowPlaying, upComing, popular, error, loading }) =>
               imageUrl={movie.poster_path}
               rating={movie.vote_average}
               year={movie.release_date && movie.release_date.substring(0, 4)}
-              star={movie.vote_count}
               isMovie={true}
             />
           ))}
@@ -57,7 +54,6 @@ const HomePresenter = ({ nowPlaying, upComing, popular, error, loading }) =>
               imageUrl={movie.poster_path}
               rating={movie.vote_average}
               year={movie.release_date && movie.release_date.substring(0, 4)}
-              star={movie.vote_count}
               isMovie={true}
             />
           ))}
